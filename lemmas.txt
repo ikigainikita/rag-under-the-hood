@@ -1,0 +1,31 @@
+# Irregular Verbs (Be/Have/Do/Go)
+am:be,is:be,are:be,was:be,were:be,been:be,being:be
+has:have,had:have,having:have
+does:do,did:do,done:do
+goes:go,went:go,gone:go,going:go
+
+# Common Irregular Verbs
+saw:see,seen:see,seeing:see
+told:tell,telling:tell
+brought:bring,bringing:bring
+bought:buy,buying:buy
+thought:think,thinking:think
+took:take,taken:take,taking:take
+got:get,gotten:get,getting:get
+
+# Irregular Adjectives (Comparison)
+better:good,best:good
+worse:bad,worst:bad
+further:far,farthest:far
+less:little,least:little
+
+# Irregular Nouns (Plurals)
+children:child
+men:man
+women:woman
+teeth:tooth
+feet:foot
+mice:mouse
+criteria:criterion
+data:datum
+indices:index
