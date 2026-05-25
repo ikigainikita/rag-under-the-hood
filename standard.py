@@ -38,7 +38,7 @@ def process_new_document(file_path: str, original_filename: str):
     if os.path.exists(save_path):
         print(f"[Standard Backend] Found cache for '{original_filename}'. Loading from disk...")
         vector_store = FAISS.load_local(save_path, embeddings, allow_dangerous_deserialization=True)
-        retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 5})
+        retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
         return  # Exit function early, skipping the heavy embedding!
         
     print(f"[Standard Backend] No cache found for '{original_filename}'. Embedding from scratch...")

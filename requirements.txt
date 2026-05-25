@@ -1,0 +1,12 @@
+langchain 
+langchain_ollama
+youtube-transcript-api 
+langchain-community
+faiss-cpu
+tiktoken
+python-dotenv
+langchain.text-splitters
+langgraph
+tavily-python
+pypdf
+streamlit

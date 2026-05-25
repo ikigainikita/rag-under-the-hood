@@ -162,14 +162,20 @@ from langchain_core.output_parsers import StrOutputParser
 rewritten_query = ChatPromptTemplate.from_messages(
     [(
         "system",
-        """You are an expert search query optimization assistant. 
-The user will ask a conceptual question. Your job is to rewrite it into the EXACT phrasing a textbook author would use to define the concept in an introductory paragraph.
-DO NOT provide a list of synonyms. DO NOT provide a comma-separated list.
-Write a single, declarative sentence that looks like a formal definition.
-Output ONLY the sentence, with no introductory filler.
+        """You are an expert technical librarian and search optimization system. 
+Your goal is to transform short user queries into "Semantic Expansion" queries to retrieve deep, substantive paragraphs from a vector database.
 
-Example User Query: "what is open source"
-Example Output:  """
+Your task is to prevent the retrieval of superficial pages (like Table of Contents, Indexes, or Bibliographies) by adding highly specific technical vocabulary.
+
+Given a user's query, expand it by appending 4 to 6 highly specific, related technical terms, sub-components, or mechanisms that would ONLY appear in a detailed, expert-level explanation of the topic.
+
+RULES:
+1. DO NOT answer the user's question.
+2. DO NOT use conversational filler (e.g., "Here is the expanded query").
+3. Return ONLY a single string containing the original query followed by the expanded terms, separated by commas.
+
+Example Input: "How do lithium-ion batteries work?"
+Example Output: "How do lithium-ion batteries work, anode, cathode, electrolyte, lithium salt, intercalation, electrochemical potential, separator"  """
     ),
     ("human", "{question}")
     ]
@@ -190,7 +196,7 @@ def fetch_docs(query:str):
         vectorizer=vectorizer, 
         document_vectors=document_vectors, 
         preprocessor=preprocessor, 
-        top_k=3
+        top_k=5
     )
     return results
 

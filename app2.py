@@ -152,7 +152,7 @@ def get_flattened_context(docs_list) -> str:
 # ==========================================
 # 4. USER INTERFACE
 # ==========================================
-st.title("🤖 RAG Architecture Inspector")
+st.title("Book answering system ")
 st.markdown("Upload a document to update the vector stores, then query to compare retrieval and generation metrics.")
 
 with st.sidebar:
